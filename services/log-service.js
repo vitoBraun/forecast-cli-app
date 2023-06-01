@@ -19,4 +19,14 @@ const printHelp = () => {
   );
 };
 
+export const printWeather = (res) => {
+  console.log(
+    chalk.bgYellow(
+      `Weather in city: ${res.name}. 
+      Temperature: ${res.main.temp}
+      Description: ${res.weather[0].description}`
+    )
+  );
+};
+
 export { printError, printSuccess, printHelp };
