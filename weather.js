@@ -49,19 +49,17 @@ const initCLI = async () => {
   const args = getArgs(process.argv);
   if (args.h) {
     printHelp();
+    return;
   }
   if (args.s) {
     saveCity(args.s);
-  }
-  if (args.t) {
-    saveToken(args.t);
+    return;
   }
   if (args.c) {
     printWeather(await getForecast(args.c));
+    return;
   }
-  if (args.w) {
-    printWeather(await getForecast());
-  }
+  printWeather(await getForecast());
 };
 
 initCLI();
